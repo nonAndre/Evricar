@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.ShowController">
+   <children>
+      <Label fx:id="Test" layoutX="30.0" layoutY="28.0" prefHeight="37.0" prefWidth="35.0" text="ID" />
+      <Label fx:id="Desc" layoutX="168.0" layoutY="28.0" prefHeight="232.0" prefWidth="200.0" text="desc" />
+      <Label fx:id="Altezza" layoutX="434.0" layoutY="28.0" prefHeight="28.0" prefWidth="98.0" text="altezza" />
+      <Label fx:id="Modello" layoutX="30.0" layoutY="81.0" prefHeight="30.0" prefWidth="200.0" text="modello" />
+      <Label fx:id="Marca" layoutX="435.0" layoutY="77.0" prefHeight="38.0" prefWidth="77.0" text="marca" />
+      <Label fx:id="Larghezza" layoutX="30.0" layoutY="129.0" prefHeight="38.0" prefWidth="200.0" text="larghezza" />
+      <Label fx:id="Peso" layoutX="451.0" layoutY="136.0" prefHeight="38.0" prefWidth="108.0" text="peso" />
+      <Label fx:id="Volume" layoutX="30.0" layoutY="186.0" prefHeight="18.0" prefWidth="200.0" text="volume" />
+      <Label fx:id="Prezzo" layoutX="467.0" layoutY="186.0" prefHeight="28.0" prefWidth="77.0" text="prezzo" />
+   </children>
+</AnchorPane>
