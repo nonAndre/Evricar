@@ -1,6 +1,9 @@
 package com.example.evricar;
 
 public class testAutoData {
+    public static int idUser;
+    public static int idAuto;
+    public static String id_name;
     public static String desc;
     public static String modello;
     public static String marca;

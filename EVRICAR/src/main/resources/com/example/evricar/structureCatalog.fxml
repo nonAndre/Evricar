@@ -60,13 +60,13 @@
    <left>
       <Pane prefHeight="690.0" prefWidth="225.0" styleClass="pane" BorderPane.alignment="CENTER">
          <TextField fx:id="linea_audi" layoutX="57.0" layoutY="20.0" prefHeight="41.0" prefWidth="65.5" />
-         <TextField fx:id="linea_lamborghini" layoutX="57.0" layoutY="81.0" prefHeight="41.0" prefWidth="132.0" visible="false" />
-         <TextField fx:id="linea_mercedes" layoutX="57.0" layoutY="142.0" prefHeight="41.0" prefWidth="111.0" visible="false" />
-         <TextField fx:id="linea_mustang" layoutX="57.0" layoutY="203.0" prefHeight="41.0" prefWidth="102.0" visible="false" />
-         <TextField fx:id="linea_opel" layoutX="57.0" layoutY="264.0" prefHeight="41.0" prefWidth="68.0" visible="false" />
-         <TextField fx:id="linea_landRover" layoutX="57.0" layoutY="325.0" prefHeight="41.0" prefWidth="123.0" visible="false" />
-         <TextField fx:id="linea_renault" layoutX="57.0" layoutY="385.0" prefHeight="41.0" prefWidth="91.0" visible="false" />
-         <TextField fx:id="linea_tesla" layoutX="57.0" layoutY="447.0" prefHeight="41.0" prefWidth="73.0" visible="false" />
+         <TextField fx:id="linea_lamborghini" layoutX="57.0" layoutY="87.0" prefHeight="41.0" prefWidth="132.0" visible="false" />
+         <TextField fx:id="linea_mercedes" layoutX="57.0" layoutY="154.0" prefHeight="41.0" prefWidth="111.0" visible="false" />
+         <TextField fx:id="linea_mustang" layoutX="57.0" layoutY="221.0" prefHeight="41.0" prefWidth="102.0" visible="false" />
+         <TextField fx:id="linea_opel" layoutX="57.0" layoutY="284.0" prefHeight="41.0" prefWidth="68.0" visible="false" />
+         <TextField fx:id="linea_landRover" layoutX="57.0" layoutY="350.0" prefHeight="41.0" prefWidth="123.0" visible="false" />
+         <TextField fx:id="linea_renault" layoutX="57.0" layoutY="415.0" prefHeight="41.0" prefWidth="91.0" visible="false" />
+         <TextField fx:id="linea_tesla" layoutX="57.0" layoutY="482.0" prefHeight="41.0" prefWidth="73.0" visible="false" />
 
          <VBox prefHeight="690.0" prefWidth="225.0">
 

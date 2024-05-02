@@ -16,7 +16,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1125.0" style="-fx-background-color: white;" stylesheets="@Catalog.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.MercedesController">
     <ImageView fitHeight="85.0" fitWidth="108.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@Image/MercedesLogo.png" />
+        <Image url="@Image/Mercedes/MercedesLogo.png" />
       <effect>
          <Shadow height="0.0" radius="0.0" width="0.0" />
       </effect>
@@ -55,7 +55,7 @@
                 </VBox.margin>
                 <VBox  prefHeight="300.0" prefWidth="319.0">
                     <ImageView fitHeight="179.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@Image/MercedesAmgGt.png" />
+                        <Image url="@Image/Mercedes/MercedesAmgGt.png" />
                   <VBox.margin>
                      <Insets top="-20.0" />
                   </VBox.margin>
@@ -127,7 +127,7 @@
                 </VBox.margin>
                 <VBox  prefHeight="300.0" prefWidth="319.0">
                     <ImageView fitHeight="161.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@Image/MercedesClasseA.png" />
+                        <Image url="@Image/Mercedes/MercedesClasseA.png" />
                   <VBox.margin>
                      <Insets top="15.0" />
                   </VBox.margin>
@@ -202,7 +202,7 @@
                         <VBox.margin>
                             <Insets left="45.0" />
                         </VBox.margin>
-                        <Image url="@Image/MercedesGLC.png" />
+                        <Image url="@Image/Mercedes/MercedesGLC.png" />
                     </ImageView>
                     <HBox prefHeight="40.0" prefWidth="290.0">
                         <VBox.margin>

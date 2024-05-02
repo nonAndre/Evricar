@@ -37,7 +37,7 @@
             <VBox.margin>
                <Insets left="110.0" top="-50.0" />
             </VBox.margin>
-            <Image url="@Logo1.png" />
+            <Image url="@Image/Logo1.png" />
          </ImageView>
          <Label text="Sign Up" textFill="#21f21d">
             <font>
@@ -67,7 +67,7 @@
                      </color>
                   </Shadow>
                </effect>
-               <Image url="@User.png" />
+               <Image url="@Image/User.png" />
             </ImageView>
 
          </HBox>
@@ -87,7 +87,7 @@
                      </color>
                   </Shadow>
                </effect>
-               <Image url="@Email.png" />
+               <Image url="@Image/Email.png" />
             </ImageView>
 
          </HBox>
@@ -107,7 +107,7 @@
                      </color>
                   </Shadow>
                </effect>
-               <Image url="@Lock.png" />
+               <Image url="@Image/Lock.png" />
             </ImageView>
 
          </HBox>

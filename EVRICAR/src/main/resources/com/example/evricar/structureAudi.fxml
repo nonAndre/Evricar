@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1125.0" style="-fx-background-color: white;" stylesheets="@Catalog.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.AudiController">
    <ImageView fitHeight="85.0" fitWidth="108.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@Image/AudiLogo.png" />
+      <Image url="@Image/Audi/AudiLogo.png" />
    </ImageView>
    <Label layoutX="170.0" layoutY="39.0" text="Audi">
       <font>
@@ -42,7 +42,7 @@
             </VBox.margin>
             <VBox  prefHeight="300.0" prefWidth="319.0">
                <ImageView fitHeight="161.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@Image/AudiRS3.png" />
+                  <Image url="@Image/Audi/AudiRS3.png" />
                </ImageView>
                <HBox prefHeight="40.0" prefWidth="290.0">
                   <VBox.margin>
@@ -111,7 +111,7 @@
             </VBox.margin>
             <VBox  prefHeight="300.0" prefWidth="319.0">
                <ImageView fitHeight="161.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@Image/AudiA1.png" />
+                  <Image url="@Image/Audi/AudiA1.png" />
                </ImageView>
                <HBox prefHeight="40.0" prefWidth="290.0">
                   <VBox.margin>
@@ -183,7 +183,7 @@
                   <VBox.margin>
                      <Insets left="12.0" />
                   </VBox.margin>
-                  <Image url="@Image/AudiA5.jpeg" />
+                  <Image url="@Image/Audi/AudiA5.jpeg" />
                </ImageView>
                <HBox prefHeight="40.0" prefWidth="290.0">
                   <VBox.margin>

@@ -15,7 +15,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1125.0" style="-fx-background-color: white;" stylesheets="@Catalog.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.OpelController">
    <ImageView fitHeight="85.0" fitWidth="108.0" layoutX="40.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@Image/OpelLogo.png" />
+      <Image url="@Image/Opel/OpelLogo.png" />
    </ImageView>
    <Label layoutX="170.0" layoutY="39.0" text="Opel">
       <font>
@@ -42,7 +42,7 @@
             </VBox.margin>
             <VBox  prefHeight="300.0" prefWidth="319.0">
                <ImageView fitHeight="130.0" fitWidth="268.0" pickOnBounds="true" preserveRatio="true">
-                  <Image url="@Image/OpelCorsa.png" />
+                  <Image url="@Image/Opel/OpelCorsa.png" />
                   <VBox.margin>
                      <Insets left="30.0" top="10.0" />
                   </VBox.margin>
@@ -107,7 +107,7 @@
                <children>
                   <ImageView fitHeight="190.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Image/OpelKarl.png" />
+                        <Image url="@Image/Opel/OpelKarl.png" />
                      </image>
                      <VBox.margin>
                         <Insets top="-30.0" />
@@ -193,7 +193,7 @@
                   <VBox.margin>
                      <Insets left="10.0" top="10.0" />
                   </VBox.margin>
-                  <Image url="@Image/OpelMokka.png" />
+                  <Image url="@Image/Opel/OpelMokka.png" />
                </ImageView>
                <HBox prefHeight="40.0" prefWidth="290.0">
                   <VBox.margin>

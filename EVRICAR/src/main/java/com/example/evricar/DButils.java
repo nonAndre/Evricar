@@ -194,7 +194,6 @@ public class DButils
 				FXMLLoader loader = new FXMLLoader(DButils.class.getResource(fxmlFile));
 				root = loader.load();
                 ShowController controller = loader.getController();
-				controller.set(id);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -223,6 +222,11 @@ public class DButils
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSets = null;
+
+		if (id != 0) {
+			testAutoData.idAuto = id;
+		}
+
 		try
 		{
 			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
@@ -252,6 +256,7 @@ public class DButils
 					testAutoData.modello=retrieveModello;
 					testAutoData.desc =retrieveDesc;
 					testAutoData.alt= Float.parseFloat(retriveAltezza);
+					testAutoData.lun= Float.parseFloat(retrieveLunghezza);
 					testAutoData.lar= Float.parseFloat(retrieveLarghezza);
 					testAutoData.peso= Float.parseFloat(retrievePeso);
 					testAutoData.volume= Float.parseFloat(retrieveVolumeBagagliaio);
@@ -289,6 +294,28 @@ public class DButils
 
 	}
 
+	public static void getId (ActionEvent event, String username) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+		try
+		{
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement =connection.prepareStatement("SELECT user_id FROM Autentificazione WHERE username=?");
+			preparedStatement.setString(1,username);
+			resultSets = preparedStatement.executeQuery();
 
-
+			if (!resultSets.isBeforeFirst())
+			{
+				System.out.println("not logged in");
+			}else {
+				while(resultSets.next()){
+					String retrieveId = resultSets.getString("user_id");
+					testAutoData.idUser = Integer.parseInt(retrieveId);
+				}
+			}
+		} catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

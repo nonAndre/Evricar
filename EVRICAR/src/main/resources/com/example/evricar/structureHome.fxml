@@ -64,10 +64,10 @@
 
     <AnchorPane fx:id="panel_audi" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/AudiFoto.jpeg" />
+            <Image url="@Image/Audi/AudiFoto.jpeg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/AudiLogo.png" />
+            <Image url="@Image/Audi/AudiLogo.png" />
         </ImageView>
       <Button fx:id="catalogo_audi" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -78,10 +78,10 @@
 
     <AnchorPane fx:id="panel_lamborghini" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/LamborghiniFoto.jpg" />
+            <Image url="@Image/Lamborghini/LamborghiniFoto.jpg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/LamborghiniLogo1.png" />
+            <Image url="@Image/Lamborghini/LamborghiniLogo1.png" />
         </ImageView>
       <Button fx:id="catalogo_lamborghini" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -92,13 +92,13 @@
 
     <AnchorPane fx:id="panel_mercedes" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/MercedesFoto.jpeg" />
+            <Image url="@Image/Mercedes/MercedesFoto.jpeg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <effect>
                 <Shadow height="0.0" radius="0.0" width="0.0" />
             </effect>
-            <Image url="@Image/MercedesLogo.png" />
+            <Image url="@Image/Mercedes/MercedesLogo.png" />
         </ImageView>
       <Button fx:id="catalogo_mercedes" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -109,10 +109,10 @@
 
     <AnchorPane fx:id="panel_mustang" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/MustangFoto.jpeg" />
+            <Image url="@Image/Mustang/MustangFoto.jpeg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/MustangLogo.png" />
+            <Image url="@Image/Mustang/MustangLogo.png" />
         </ImageView>
       <Button fx:id="catalogo_mustang" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -123,10 +123,10 @@
 
     <AnchorPane fx:id="panel_opel" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/OpelFoto.jpeg" />
+            <Image url="@Image/Opel/OpelFoto.jpeg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="121.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/OpelLogo.png" />
+            <Image url="@Image/Opel/OpelLogo.png" />
         </ImageView>
       <Button fx:id="catalogo_opel" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -137,10 +137,10 @@
 
     <AnchorPane fx:id="panel_landRover" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/RangeRoverFoto.jpeg" />
+            <Image url="@Image/LandRover/RangeRoverFoto.jpeg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/RangeRoverLogo.png" />
+            <Image url="@Image/LandRover/RangeRoverLogo.png" />
         </ImageView>
       <Button fx:id="catalogo_landRover" layoutX="297.0" layoutY="73.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -151,10 +151,10 @@
 
     <AnchorPane fx:id="panel_renault" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/RenaultFoto.jpeg" />
+            <Image url="@Image/Renault/RenaultFoto.jpeg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/RenaultLogo.png" />
+            <Image url="@Image/Renault/RenaultLogo.png" />
         </ImageView>
       <Button fx:id="catalogo_renault" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
@@ -165,10 +165,10 @@
 
     <AnchorPane fx:id="panel_tesla" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/TeslaFoto.jpg" />
+            <Image url="@Image/Tesla/TeslaFoto.jpg" />
         </ImageView>
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="78.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@Image/TeslaLogo1.png" />
+            <Image url="@Image/Tesla/TeslaLogo1.png" />
         </ImageView>
       <Button fx:id="catalogo_tesla" layoutX="236.0" layoutY="65.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
          <font>
