@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.PreventivoController">
+   <children>
+      <Label fx:id="nome" layoutX="44.0" layoutY="37.0" prefHeight="32.0" prefWidth="55.0" text="Nome" />
+      <Label fx:id="modello" layoutX="44.0" layoutY="86.0" text="Modello" />
+      <Label fx:id="marca" layoutX="44.0" layoutY="132.0" text="Marca" />
+      <Label fx:id="col" layoutX="44.0" layoutY="172.0" prefHeight="17.0" prefWidth="44.0" text="Label" />
+      <Label fx:id="mot" layoutX="44.0" layoutY="212.0" prefHeight="17.0" prefWidth="44.0" text="Label" />
+      <Label fx:id="opt" layoutX="44.0" layoutY="247.0" prefHeight="17.0" prefWidth="33.0" text="Label" />
+      <Label fx:id="used" layoutX="44.0" layoutY="284.0" prefHeight="17.0" prefWidth="44.0" text="Label" />
+      <Label fx:id="data_rit" layoutX="264.0" layoutY="37.0" text="Label" />
+      <Label fx:id="citta" layoutX="264.0" layoutY="78.0" text="Label" />
+      <Label fx:id="usato_mod" layoutX="264.0" layoutY="124.0" text="Label" />
+      <Label fx:id="marca_used" layoutX="264.0" layoutY="172.0" text="Label" />
+      <Label fx:id="telef" layoutX="264.0" layoutY="212.0" text="Label" />
+       <Label fx:id="mail" layoutX="264.0" layoutY="212.0" text="Label" />
+      <Button fx:id="indietro" layoutX="40.0" layoutY="351.0" mnemonicParsing="false" onAction="#goBack" text="Button" />
+      <Label fx:id="prezzo" layoutX="149.0" layoutY="45.0" text="Label" />
+      <Button fx:id="accetta" layoutX="461.0" layoutY="351.0" mnemonicParsing="false" onAction="#AccettaPrev" prefHeight="25.0" prefWidth="120.0" text="Accetta e paga" />
+   </children>
+</AnchorPane>

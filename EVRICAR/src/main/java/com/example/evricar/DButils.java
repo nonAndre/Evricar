@@ -1,6 +1,8 @@
 package com.example.evricar;
 
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,7 +18,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Objects;
 
 
@@ -146,7 +147,14 @@ public class DButils
 					String retrievePassword = resultSets.getString("password");
 					String retriveMail = resultSets.getString("mail");
 					if (retrievePassword.equals(password)) {
-						changeScene(event,"structureCatalog.fxml","Welcome!",mail,retriveMail);
+						if (retriveMail.contains("@impiegatiEvricar.com")) {
+							changeScene(event,"structureImpiegati.fxml","Welcome",mail,retriveMail);
+						}else if(retriveMail.contains("@segreteriaEvricar.com")) {
+							changeScene(event,"structureSegreteria.fxml","Welcome",mail,retriveMail);
+						}else {
+							changeScene(event,"structureCatalog.fxml","Welcome!",mail,retriveMail);
+						}
+
 					}else{
 						System.out.println("Wrong password");
 						Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -318,4 +326,79 @@ public class DButils
             throw new RuntimeException(e);
         }
     }
+
+	public static void setPrev(StringBuilder str) throws SQLException {
+
+		Connection connection;
+		connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+		PreparedStatement pstInsert = connection.prepareStatement("INSERT INTO Preventivi (contenutoPrev) VALUES (?)");
+		pstInsert.setString(1, String.valueOf(str));
+		pstInsert.executeUpdate();
+	}
+
+	public static void getIdPrev(StringBuilder builder) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+		try
+		{
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement =connection.prepareStatement("SELECT id_preventivo FROM Preventivi WHERE contenutoPrev=?");
+			preparedStatement.setString(1, String.valueOf(builder));
+			resultSets = preparedStatement.executeQuery();
+
+			if (!resultSets.isBeforeFirst())
+			{
+				System.out.println("not logged in");
+			}else {
+				while(resultSets.next()){
+					String retrieveId = resultSets.getString("id_preventivo");
+					testAutoData.idPreventivo = Integer.parseInt(retrieveId);
+				}
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public static void setLink(int idUser, int idPreventivo , boolean used,String ritiro) throws SQLException {
+		Connection connection;
+		connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+		PreparedStatement pstInsert = connection.prepareStatement("INSERT INTO Utente_Preventivi (user_id,id_preventivo,Usato,Ritiro) VALUES (?,?,?,?)");
+		pstInsert.setString(1, String.valueOf(idUser));
+		pstInsert.setString(2, String.valueOf(idPreventivo));
+		pstInsert.setString(3, String.valueOf(used));
+		pstInsert.setString(4, String.valueOf(ritiro));
+		pstInsert.executeUpdate();
+	}
+
+	public static void setTable() throws SQLException {
+		Connection connection;
+		PreparedStatement preparedStatement;
+		ResultSet resultSets;
+		ObservableList<String> listview = FXCollections.observableArrayList();
+		try {
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer", "freedb_notAndre", "pGs!eJaDMPp3*56");
+			preparedStatement = connection.prepareStatement("SELECT DISTINCT Autentificazione.user_id ,Autentificazione.username,Utente_Preventivi.id_preventivo,Utente_Preventivi.Usato,Utente_Preventivi.Ritiro FROM Utente_Preventivi INNER JOIN Autentificazione ON Usato=? WHERE Utente_Preventivi.user_id = Autentificazione.user_id ");
+			preparedStatement.setString(1, "false");
+			resultSets = preparedStatement.executeQuery();
+
+			while (resultSets.next()) {
+				String username = resultSets.getString("Autentificazione.username");
+				String userId = resultSets.getString("Autentificazione.user_id");
+				String idPreventivo = resultSets.getString("Utente_Preventivi.id_preventivo");
+				String isUsato = resultSets.getString("Utente_Preventivi.Usato");
+				String ritiro = resultSets.getString("Utente_Preventivi.Ritiro");
+
+                listview.add(username);
+				listview.add(userId);
+				listview.add(idPreventivo);
+				listview.add(isUsato);
+				listview.add(ritiro);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		testAutoData.prev = listview;
+	}
 }

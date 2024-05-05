@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -69,25 +68,15 @@
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/Audi/AudiLogo.png" />
         </ImageView>
-      <Button fx:id="catalogo_audi" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_lamborghini" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
             <Image url="@Image/Lamborghini/LamborghiniFoto.jpg" />
         </ImageView>
-        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="150.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/Lamborghini/LamborghiniLogo1.png" />
         </ImageView>
-      <Button fx:id="catalogo_lamborghini" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_mercedes" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
@@ -100,11 +89,6 @@
             </effect>
             <Image url="@Image/Mercedes/MercedesLogo.png" />
         </ImageView>
-      <Button fx:id="catalogo_mercedes" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_mustang" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
@@ -114,11 +98,6 @@
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/Mustang/MustangLogo.png" />
         </ImageView>
-      <Button fx:id="catalogo_mustang" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_opel" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
@@ -128,116 +107,85 @@
         <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="121.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/Opel/OpelLogo.png" />
         </ImageView>
-      <Button fx:id="catalogo_opel" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_landRover" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
             <Image url="@Image/LandRover/RangeRoverFoto.jpeg" />
         </ImageView>
-        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/LandRover/RangeRoverLogo.png" />
         </ImageView>
-      <Button fx:id="catalogo_landRover" layoutX="297.0" layoutY="73.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_renault" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
             <Image url="@Image/Renault/RenaultFoto.jpeg" />
         </ImageView>
-        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="122.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="150.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/Renault/RenaultLogo.png" />
         </ImageView>
-      <Button fx:id="catalogo_renault" layoutX="297.0" layoutY="85.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
     <AnchorPane fx:id="panel_tesla" layoutY="90.0" prefHeight="690.0" prefWidth="1350.0" visible="false">
         <ImageView fitHeight="690.0" fitWidth="1350.0" pickOnBounds="true">
-            <Image url="@Image/Tesla/TeslaFoto.jpg" />
+         <image>
+            <Image url="@Image/Tesla/TeslaFoto.jpeg" />
+         </image>
         </ImageView>
-        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="78.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="113.0" fitWidth="148.0" layoutX="150.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Image/Tesla/TeslaLogo1.png" />
         </ImageView>
-      <Button fx:id="catalogo_tesla" layoutX="236.0" layoutY="65.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="89.0" styleClass="btn-catalog" text="Scopri">
-         <font>
-            <Font name="Arial Bold" size="17.0" />
-         </font>
-      </Button>
     </AnchorPane>
 
-    <Button fx:id="left_arrow" alignment="CENTER" contentDisplay="CENTER" layoutY="345.0" mnemonicParsing="false" opacity="0.82" prefHeight="125.0" prefWidth="25.0" styleClass="trans-btn-black-border" text="&lt;" textFill="WHITE">
-        <font>
-          <Font name="System Bold" size="20.0" />
-        </font>
-        <cursor>
-          <Cursor fx:constant="HAND" />
-        </cursor>
-    </Button>
-    <Button fx:id="right_arrow" alignment="CENTER" contentDisplay="CENTER" layoutX="1309.0" layoutY="347.0" mnemonicParsing="false" opacity="0.82" prefHeight="125.0" prefWidth="25.0" styleClass="trans-btn-black-border" text="&gt;" textFill="WHITE">
-        <font>
-          <Font name="System Bold" size="20.0" />
-        </font>
-        <cursor>
-          <Cursor fx:constant="HAND" />
-        </cursor>
-    </Button>
-
     <Pane layoutX="30.0" layoutY="690.0" opacity="0.7" prefHeight="70.0" prefWidth="1290.0" style="-fx-background-color: black;" />
-    <HBox layoutX="30.0" layoutY="695.0" prefHeight="64.0" prefWidth="1290.0"
-          style="-fx-background-color: transparent;">
+    <HBox layoutX="30.0" layoutY="695.0" prefHeight="64.0" prefWidth="1290.0" style="-fx-background-color: transparent;">
         <TextField fx:id="greenLine_audi" prefHeight="40.0" prefWidth="126.0">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_lamborghini" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_mercedes" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_mustang" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_opel" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_landRover" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_renault" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
         <TextField fx:id="greenLine_tesla" prefHeight="40.0" prefWidth="126.0" visible="false">
            <HBox.margin>
-               <Insets left="30.0" top="10.0"/>
+               <Insets left="30.0" top="10.0" />
            </HBox.margin>
         </TextField>
     </HBox>
+   <Button fx:id="catalogo" layoutX="290.0" layoutY="175.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="204.0" styleClass="btn-catalog" text="Scopri  il catalogo">
+      <font>
+         <Font name="Arial Bold" size="17.0" />
+      </font>
+   </Button>
 
     <HBox layoutX="30.0" layoutY="695.0" prefHeight="64.0" prefWidth="1290.0" style="-fx-background-color: transparent;">
         <Button fx:id="button_audi" mnemonicParsing="false" prefHeight="40.0" prefWidth="126.0" styleClass="button-field" text="Audi" textFill="WHITE">

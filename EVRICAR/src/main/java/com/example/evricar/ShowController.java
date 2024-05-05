@@ -18,38 +18,28 @@ import java.util.ResourceBundle;
 
 
 public class ShowController implements Initializable {
-
-
     public Hyperlink myEvricar;
-
     public ImageView imgAuto;
     public ImageView imgCollage;
-
     public Label marca;
     public Label modello;
     public Label prezzo;
-
-
     public TextArea desc;
     public Label altezza;
     public Label lunghezza;
     public Label larghezza;
     public Label peso;
     public Label volume;
-
     public Button back;
     public Button configura;
-
     public Image img1;
     public Image img2;
 
 
-    public void back (ActionEvent event)
-    {
+    public void back (ActionEvent event) {
         DButils.changeScene(event,"structureCatalog.fxml",null,testAutoData.id_name,null);
     }
-    public void conf (ActionEvent event)
-    {
+    public void conf (ActionEvent event) {
         DButils.getId(event,testAutoData.id_name);
         DButils.changeScene(event,"structureConfigure.fxml",null,testAutoData.id_name,null);
     }
@@ -60,9 +50,7 @@ public class ShowController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        if (testAutoData.id_name!=null)
-        {
+        if (testAutoData.id_name!=null) {
             myEvricar.setText(testAutoData.id_name);
         }else {
             myEvricar.setText("My Evricar");
@@ -78,8 +66,7 @@ public class ShowController implements Initializable {
         volume.setText(String.valueOf(testAutoData.volume));
         prezzo.setText(String.valueOf(testAutoData.prezzo));
 
-        switch (testAutoData.idAuto)
-        {
+        switch (testAutoData.idAuto) {
             case 1:
                 img1= new Image("file:src/main/resources/com/example/evricar/Image/Audi/AudiRS3.png");
                 img2= new Image("file:src/main/resources/com/example/evricar/Image/Audi/Rs3Collage.JPEG");
@@ -168,7 +155,7 @@ public class ShowController implements Initializable {
                 imgCollage.setImage(img2);
                 break;
             case 15:
-                img1= new Image("file:src/main/resources/com/example/evricar/Image/LandRover/RangeRoverFoto.jpeg/");
+                img1= new Image("file:src/main/resources/com/example/evricar/Image/LandRover/LandRoverRangeRover.jpeg/");
                 img2= new Image("file:src/main/resources/com/example/evricar/Image/LandRover/RangeRoverCollage.JPEG");
                 imgAuto.setImage(img1);
                 imgCollage.setImage(img2);
@@ -221,7 +208,6 @@ public class ShowController implements Initializable {
                 imgAuto.setImage(img1);
                 imgCollage.setImage(img2);
                 break;
-
         }
     }
 }

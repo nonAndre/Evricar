@@ -113,7 +113,6 @@ public class CatalogController implements Initializable {
             testAutoData.id_name = name;
             hyperLink.setText(name);
         }
-
     }
 
     public void AllNotVisible() {

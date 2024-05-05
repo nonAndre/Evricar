@@ -8,8 +8,8 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="780.0" prefWidth="1350.0" style="-fx-background-color: white;" stylesheets="@Configure.css" vbarPolicy="NEVER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.ConfigController">
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1350.0" style="-fx-background-color: white;">
+<ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="780.0" prefWidth="1350.0" style="-fx-background-color: white;" stylesheets="@Configure.css" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.ConfigController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="930.0" prefWidth="1350.0" style="-fx-background-color: white;">
     <Button fx:id="back" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" onAction="#goBack" styleClass="btn-back" text="&lt;    torna alla descrizione">
         <font>
             <Font name="Lao MN" size="13.0" />
@@ -29,7 +29,7 @@
                  <Font name="Georgia" size="22.0" />
              </font>
          <HBox.margin>
-            <Insets left="650.0" />
+            <Insets left="610.0" />
          </HBox.margin>
          </Text>
           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="€">
@@ -40,7 +40,7 @@
             <Insets left="20.0" />
          </HBox.margin>
           </Text>
-          <Label fx:id="prezzo" prefHeight="35.0" prefWidth="126.0">
+          <Label fx:id="prezzo" prefHeight="35.0" prefWidth="160.0">
               <font>
                   <Font name="Tahoma" size="28.0" />
               </font>
@@ -298,20 +298,12 @@
          </font>
       </TextField>
       <VBox layoutX="20.0" layoutY="55.0" prefHeight="181.0" prefWidth="626.0">
-         <CheckBox fx:id="interniPelle" mnemonicParsing="false" text="interni in vera pelle ( + 900 € )">
+         <CheckBox fx:id="interniPelle" mnemonicParsing="false" onAction="#Pelle" text="interni in vera pelle ( + 1000 € )">
             <font>
                <Font name="Lao MN" size="19.0" />
             </font>
          </CheckBox>
-         <CheckBox fx:id="vetriOscurati" mnemonicParsing="false" text="vetri oscurati ( + 300 € )">
-            <font>
-               <Font name="Lao MN" size="19.0" />
-            </font>
-            <VBox.margin>
-               <Insets top="5.0" />
-            </VBox.margin>
-         </CheckBox>
-         <CheckBox fx:id="telecPost" mnemonicParsing="false" text="telecamera posteriore ( + 150 € )">
+         <CheckBox fx:id="vetriOscurati" mnemonicParsing="false" onAction="#Vetri" text="vetri oscurati ( + 2000 € )">
             <font>
                <Font name="Lao MN" size="19.0" />
             </font>
@@ -319,7 +311,7 @@
                <Insets top="5.0" />
             </VBox.margin>
          </CheckBox>
-         <CheckBox fx:id="cambioAuto" mnemonicParsing="false" text="cambio automatico ( + 1000 € )">
+         <CheckBox fx:id="telecPost" mnemonicParsing="false" onAction="#Telecamera" text="telecamera posteriore ( + 3000 € )">
             <font>
                <Font name="Lao MN" size="19.0" />
             </font>
@@ -327,7 +319,15 @@
                <Insets top="5.0" />
             </VBox.margin>
          </CheckBox>
-         <CheckBox fx:id="sensParcheggio" mnemonicParsing="false" text="sensori parcheggio, sia posteriori che anteriori ( + 100 € )">
+         <CheckBox fx:id="cambioAuto" mnemonicParsing="false" onAction="#Cambio" text="cambio automatico ( + 4000 € )">
+            <font>
+               <Font name="Lao MN" size="19.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </CheckBox>
+         <CheckBox fx:id="sensParcheggio" mnemonicParsing="false" onAction="#Sensori" text="sensori parcheggio, sia posteriori che anteriori ( + 5000 € )">
             <font>
                <Font name="Lao MN" size="19.0" />
             </font>
@@ -338,23 +338,93 @@
       </VBox>
    </Pane>
 
-     <Button fx:id="prev" contentDisplay="CENTER" layoutX="1110.0" layoutY="680.0" mnemonicParsing="false" onAction="#askPrev" prefHeight="65.0" prefWidth="198.0" styleClass="btn-prev" text="Preventivo   &gt;">
+     <Button fx:id="prev" contentDisplay="CENTER" layoutX="1110.0" layoutY="850.0" mnemonicParsing="false" onAction="#askPrev" prefHeight="65.0" prefWidth="198.0" styleClass="btn-prev" text="Preventivo   &gt;">
          <font>
              <Font name="Lao MN" size="25.0" />
          </font>
      </Button>
+      <Pane layoutX="38.0" layoutY="700.0" prefHeight="169.0" prefWidth="1269.0">
+         <children>
+            <TextField editable="false" prefHeight="45.0" prefWidth="336.0" styleClass="title" text="Informazioni per il preventivo">
+               <font>
+                  <Font name="Euphemia UCAS Bold" size="20.0" />
+               </font>
+            </TextField>
+            <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="55.0" prefHeight="62.0" prefWidth="1225.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telefono:">
+                     <font>
+                        <Font name="Lao MN" size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="tel" prefHeight="34.0" prefWidth="134.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Lao MN" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email: ">
+                     <font>
+                        <Font name="Lao MN" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Text>
+                  <TextField fx:id="email" prefHeight="34.0" prefWidth="198.0">
+                     <font>
+                        <Font name="Lao MN" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Luogo di ritiro:">
+                     <font>
+                        <Font name="Lao MN" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Text>
+                  <ChoiceBox fx:id="luogo" onMouseReleased="#getChoice" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data:">
+                     <font>
+                        <Font name="Lao MN" size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Text>
+                  <DatePicker fx:id="data" onAction="#getDatePicker">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
 
-      <Button fx:id="btn_usato" layoutX="38.0" layoutY="710.0" mnemonicParsing="false" styleClass="btn-prev" text="Inserisci usato">
+      <Button fx:id="btn_usato" layoutX="38.0" layoutY="870.0" mnemonicParsing="false" onAction="#askUsato" styleClass="btn-prev" text="Inserisci usato">
          <font>
             <Font name="Euphemia UCAS Bold" size="15.0" />
          </font>
       </Button>
-      <Text fx:id="text_usato" fill="#514b4b" layoutX="150.0" layoutY="910.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci la tua immagine" visible="false">
+
+
+      <Text fx:id="text_usato" fill="#514b4b" layoutX="150.0" layoutY="1090.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserisci la tua immagine">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-   <Pane fx:id="pane_usato" layoutX="48.0" layoutY="765.0" prefHeight="274.0" prefWidth="945.0" visible="false">
+   <Pane fx:id="pane_usato" layoutX="48.0" layoutY="940.0" prefHeight="274.0" prefWidth="945.0">
       <HBox alignment="CENTER" prefHeight="274.0" prefWidth="411.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 2;">
          <ImageView fx:id="imageUsato" fitHeight="274.0" fitWidth="411.0" nodeOrientation="INHERIT" onDragDropped="#DragAndDrop" onDragOver="#ViewImageDrag" pickOnBounds="true" preserveRatio="true" />
       </HBox>
@@ -413,6 +483,34 @@
                </VBox.margin>
             </Button>
       </VBox>
+   </Pane>
+
+
+         <Pane fx:id="popUp" disable="true" layoutX="460.0" layoutY="240.0" prefHeight="288.0" prefWidth="468.0" style="-fx-background-color: #38da32; -fx-border-color: black; -fx-border-width: 2;" visible="false">
+            <ImageView fx:id="esci" fitHeight="28.0" fitWidth="25.0" layoutX="428.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <effect>
+                  <Shadow height="1.0" radius="0.0" width="0.0" />
+               </effect>
+               <Image url="@Image/exit.png" />
+            </ImageView>
+      <Text layoutX="202.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hey!">
+         <font>
+            <Font name="Georgia Bold" size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="25.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Devi accedere se hai dell'usato">
+         <font>
+            <Font name="Georgia Bold" size="27.0" />
+         </font>
+      </Text>
+      <Hyperlink fx:id="accedi" layoutX="181.0" layoutY="210.0" onAction="#setAccedi" prefHeight="48.0" prefWidth="129.0" styleClass="btn-accedi" text="Accedi" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+         </padding>
+      </Hyperlink>
    </Pane>
 </AnchorPane>
 </ScrollPane>
