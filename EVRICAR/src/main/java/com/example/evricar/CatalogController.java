@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 
@@ -26,6 +27,7 @@ public class CatalogController implements Initializable {
     public TextField linea_renault;
     public TextField linea_tesla;
     public TextField linea_mercedes;
+    public Label esitoAcquisto;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -41,8 +43,8 @@ public class CatalogController implements Initializable {
        hyperLink.setOnAction((ActionEvent event) -> {
            DButils.changeScene(event,"structureSignIn.fxml",null,null,null);
        });
-    }
 
+    }
 
     public void audiCatalog(ActionEvent event) throws IOException {
         AllNotVisible();
@@ -111,6 +113,24 @@ public class CatalogController implements Initializable {
         if (name != null)
         {
             testAutoData.id_name = name;
+            System.out.println(testAutoData.id_name);
+            DButils.getIdFromCatalog(testAutoData.id_name);
+            DButils.getResult(testAutoData.idUserFromCatalog);
+
+            if (Objects.equals(testAutoData.esito, "true"))
+            {
+                esitoAcquisto.setVisible(true);
+                esitoAcquisto.setText("Preventivo Accettato");
+            }
+            else if (Objects.equals(testAutoData.esito, "false"))
+            {
+                esitoAcquisto.setVisible(true);
+                esitoAcquisto.setText("Preventivo Rifiutato");
+            }
+            else {
+                esitoAcquisto.setVisible(false);
+            }
+
             hyperLink.setText(name);
         }
     }

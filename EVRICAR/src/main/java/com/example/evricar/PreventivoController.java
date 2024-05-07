@@ -25,6 +25,7 @@ public class PreventivoController implements Initializable {
     public Label citta;
     public Label usato_mod;
     public Label marca_used;
+    public Label anno_used;
     public Label telef;
     public Label mail;
     public Button indietro;
@@ -50,81 +51,101 @@ public class PreventivoController implements Initializable {
         used.setText(String.valueOf(testAutoData.secondHand));
         usato_mod.setText(testAutoData.usatoModello);
         marca_used.setText(testAutoData.marcaUsato);
+        anno_used.setText(testAutoData.usatoAnno);
         telef.setText(testAutoData.telefono);
         mail.setText(testAutoData.mail);
     }
 
     public void AccettaPrev(ActionEvent event) throws SQLException, IOException {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Prev.txt"));
-            bufferedWriter.write(String.valueOf(testAutoData.id_name));
-            bufferedWriter.write("\n");
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("Prev.txt"));
+        bufferedWriter.write(String.valueOf(testAutoData.id_name));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.modello));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.modello));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.prezzoFin));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.prezzoFin));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.marca));
-            bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.colore));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.marca));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.optional));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.colore));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.engine));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.optional));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.date));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.engine));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.city));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.date));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.telefono));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.city));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-            bufferedWriter.newLine();
-            bufferedWriter.write(String.valueOf(testAutoData.mail));
-            bufferedWriter.write("\n");
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.telefono));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
 
-             if (testAutoData.secondHand) {
+        bufferedWriter.newLine();
+        bufferedWriter.write(String.valueOf(testAutoData.mail));
+        bufferedWriter.write("£");
+        bufferedWriter.write("\n");
+
+        if (testAutoData.secondHand) {
             bufferedWriter.newLine();
             bufferedWriter.write(String.valueOf(testAutoData.usatoModello));
+            bufferedWriter.write("£");
             bufferedWriter.write("\n");
 
             bufferedWriter.newLine();
             bufferedWriter.write(String.valueOf(testAutoData.marcaUsato));
+            bufferedWriter.write("£");
             bufferedWriter.write("\n");
-             }
 
-            bufferedWriter.close();
-            readFile();
-            DButils.setPrev(builder);
-            DButils.getIdPrev(builder);
-            DButils.setLink(testAutoData.idUser,testAutoData.idPreventivo,testAutoData.secondHand,testAutoData.city);
+            bufferedWriter.newLine();
+            bufferedWriter.write(String.valueOf(testAutoData.usatoAnno));
+            bufferedWriter.write("£");
+            bufferedWriter.write("\n");
+        }
 
-            if(testAutoData.secondHand)
-            {
-                testAutoData.preventivoApprovato  = true;
-                //Pop-up Grazie per aver acquistato da noi ( pulsante torna la catalogo )
-                DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
-            }else {
-                testAutoData.preventivoApprovato  = false;
-                //Pop-up il suo preventivo dovrà essere accettato ( pulsante ok torna al catalogo )
-                DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
-            }
+        bufferedWriter.close();
+        readFile();
+        DButils.setPrev(builder);
+        DButils.getIdPrev(builder);
+        DButils.setLink(testAutoData.idUser,testAutoData.idPreventivo,testAutoData.secondHand,testAutoData.city);
+
+        if(testAutoData.secondHand)
+        {
+            testAutoData.preventivoApprovato  = true;
+            //Pop-up Grazie per aver acquistato da noi ( pulsante torna la catalogo )
+            DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
+        }else {
+            testAutoData.preventivoApprovato  = false;
+            //Pop-up il suo preventivo dovrà essere accettato ( pulsante ok torna al catalogo )
+            DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
+        }
 
     }
 

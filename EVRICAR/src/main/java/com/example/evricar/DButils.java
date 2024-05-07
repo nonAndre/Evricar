@@ -370,6 +370,13 @@ public class DButils
 		pstInsert.setString(3, String.valueOf(used));
 		pstInsert.setString(4, String.valueOf(ritiro));
 		pstInsert.executeUpdate();
+
+		connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+		PreparedStatement pstInsert2 = connection.prepareStatement("INSERT INTO EsitoPreventivo (user_id,id_preventivo) VALUES (?,?)");
+		pstInsert2.setString(1, String.valueOf(idUser));
+		pstInsert2.setString(2, String.valueOf(idPreventivo));
+		pstInsert2.executeUpdate();
+
 	}
 
 	public static void setTable() throws SQLException {
@@ -377,21 +384,20 @@ public class DButils
 		PreparedStatement preparedStatement;
 		ResultSet resultSets;
 		ObservableList<String> listview = FXCollections.observableArrayList();
+		ObservableList<String> list = FXCollections.observableArrayList();
 		try {
 			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer", "freedb_notAndre", "pGs!eJaDMPp3*56");
-			preparedStatement = connection.prepareStatement("SELECT DISTINCT Autentificazione.user_id ,Autentificazione.username,Utente_Preventivi.id_preventivo,Utente_Preventivi.Usato,Utente_Preventivi.Ritiro FROM Utente_Preventivi INNER JOIN Autentificazione ON Usato=? WHERE Utente_Preventivi.user_id = Autentificazione.user_id ");
+			preparedStatement = connection.prepareStatement("SELECT DISTINCT Autentificazione.username,Utente_Preventivi.id_preventivo,Utente_Preventivi.Usato,Utente_Preventivi.Ritiro FROM Utente_Preventivi INNER JOIN Autentificazione ON Usato=? WHERE Utente_Preventivi.user_id = Autentificazione.user_id ");
 			preparedStatement.setString(1, "false");
 			resultSets = preparedStatement.executeQuery();
 
 			while (resultSets.next()) {
 				String username = resultSets.getString("Autentificazione.username");
-				String userId = resultSets.getString("Autentificazione.user_id");
 				String idPreventivo = resultSets.getString("Utente_Preventivi.id_preventivo");
 				String isUsato = resultSets.getString("Utente_Preventivi.Usato");
 				String ritiro = resultSets.getString("Utente_Preventivi.Ritiro");
 
                 listview.add(username);
-				listview.add(userId);
 				listview.add(idPreventivo);
 				listview.add(isUsato);
 				listview.add(ritiro);
@@ -399,6 +405,166 @@ public class DButils
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+
 		testAutoData.prev = listview;
+
+		try {
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer", "freedb_notAndre", "pGs!eJaDMPp3*56");
+			preparedStatement = connection.prepareStatement("SELECT DISTINCT Autentificazione.username,Utente_Preventivi.id_preventivo,Utente_Preventivi.Usato,Utente_Preventivi.Ritiro FROM Utente_Preventivi INNER JOIN Autentificazione ON Usato=? WHERE Utente_Preventivi.user_id = Autentificazione.user_id ");
+			preparedStatement.setString(1, "true");
+			resultSets = preparedStatement.executeQuery();
+
+			while (resultSets.next()) {
+				String username2 = resultSets.getString("Autentificazione.username");
+				String idPreventivo2 = resultSets.getString("Utente_Preventivi.id_preventivo");
+				String isUsato2 = resultSets.getString("Utente_Preventivi.Usato");
+				String ritiro2 = resultSets.getString("Utente_Preventivi.Ritiro");
+
+				list.add(username2);
+				list.add(idPreventivo2);
+				list.add(isUsato2);
+				list.add(ritiro2);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+
+		testAutoData.prevV = list;
+	}
+
+	public static  void getPrevCont (String codPreventivo) throws SQLException
+	{
+		Connection connection;
+		PreparedStatement preparedStatement;
+		ResultSet resultSets;
+
+		try {
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer", "freedb_notAndre", "pGs!eJaDMPp3*56");
+			preparedStatement = connection.prepareStatement("SELECT contenutoPrev FROM Preventivi  WHERE id_preventivo=?");
+			preparedStatement.setString(1, testAutoData.codPreventivo);
+			resultSets = preparedStatement.executeQuery();
+
+			while (resultSets.next()) {
+              String content = resultSets.getString("contenutoPrev");
+			  testAutoData.contenuto = content;
+
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public static void getIdFromImpiegati (ActionEvent event, String username) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+		try
+		{
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement =connection.prepareStatement("SELECT user_id FROM Autentificazione WHERE username=?");
+			preparedStatement.setString(1,username);
+			resultSets = preparedStatement.executeQuery();
+
+			if (!resultSets.isBeforeFirst())
+			{
+				System.out.println("not logged in");
+			}else {
+				while(resultSets.next()){
+					String retrieveId = resultSets.getString("user_id");
+					testAutoData.idUserFromImpiegati = Integer.parseInt(retrieveId);
+				}
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public static void eliminaPrev(String codPreventivo) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+		try
+		{
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement =connection.prepareStatement("DELETE FROM Utente_Preventivi WHERE id_preventivo=?");
+			preparedStatement.setString(1,codPreventivo);
+			preparedStatement.executeUpdate();
+
+			preparedStatement =connection.prepareStatement("DELETE FROM Preventivi WHERE id_preventivo=?");
+			preparedStatement.setString(1,codPreventivo);
+			preparedStatement.executeUpdate();
+
+
+
+		} catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+	public static void updateTable (String result,String codPreventivo)
+	{
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+
+		try
+		{
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement =connection.prepareStatement("UPDATE EsitoPreventivo SET esito=? WHERE id_preventivo=?");
+			preparedStatement.setString(1,result);
+			preparedStatement.setString(2,codPreventivo);
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+
+	public static void getIdFromCatalog(String idName) {
+		Connection connection1 = null;
+		PreparedStatement preparedStatement1 = null;
+		ResultSet resultSets1 = null;
+		try
+		{
+			connection1 = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement1 =connection1.prepareStatement("SELECT user_id FROM Autentificazione WHERE username=?");
+			preparedStatement1.setString(1,idName);
+			resultSets1 = preparedStatement1.executeQuery();
+
+			if (!resultSets1.isBeforeFirst())
+			{
+				System.out.println("HERE");
+			}else {
+				while(resultSets1.next()){
+					String retrieveId = resultSets1.getString("user_id");
+                    testAutoData.idUserFromCatalog = Integer.parseInt(retrieveId);
+				}
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+	public static void getResult(int idUserFromCatalog) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+		try
+		{
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+			preparedStatement =connection.prepareStatement("SELECT esito FROM EsitoPreventivo WHERE user_id=?");
+			preparedStatement.setString(1, String.valueOf(idUserFromCatalog));
+			resultSets = preparedStatement.executeQuery();
+
+				while(resultSets.next()){
+					String retrieveEsito = resultSets.getString("esito");
+                    testAutoData.esito = retrieveEsito;
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

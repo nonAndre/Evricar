@@ -197,6 +197,7 @@
                   </font>
                </Button>
             </HBox>
+            <Label fx:id="esitoAcquisto" prefHeight="48.0" prefWidth="223.0" text="Label" />
          </VBox>
       </Pane>
    </left>

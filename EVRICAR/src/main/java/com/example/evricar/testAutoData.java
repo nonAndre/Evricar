@@ -6,6 +6,11 @@ import java.util.Date;
 
 public class testAutoData {
 
+    public static String cond;
+
+    public static String contenuto;
+    public static String codPreventivo;
+    public static ObservableList<String> prevV;
     public static ObservableList<String> prev;
     public static boolean preventivoApprovato;
 
@@ -25,6 +30,8 @@ public class testAutoData {
     
     public static int idPreventivo;
     public static int idUser;
+    public static int idUserFromImpiegati;
+    public static int idUserFromCatalog;
     public static int idAuto;
     public static String id_name;
     public static String desc;
@@ -36,4 +43,6 @@ public class testAutoData {
     public static float peso;
     public static float volume;
     public static float prezzo;
+    public static String esito;
+    public static String accettato = "null";
 }

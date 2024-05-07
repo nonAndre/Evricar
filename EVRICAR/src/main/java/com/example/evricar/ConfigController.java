@@ -107,9 +107,9 @@ public class ConfigController implements Initializable {
 
         if(testAutoData.secondHand)
         {
-            testAutoData.marcaUsato= String.valueOf(marca_usato);
-            testAutoData.usatoModello= String.valueOf(modello_usato);
-            testAutoData.usatoAnno= String.valueOf(anno_usato);
+            testAutoData.marcaUsato= marca_usato.getText();
+            testAutoData.usatoModello= modello_usato.getText();
+            testAutoData.usatoAnno= anno_usato.getText();
         }
 
         if(testAutoData.id_name != null)
@@ -131,7 +131,7 @@ public class ConfigController implements Initializable {
             pane_usato.setVisible(true);
             text_usato.setVisible(true);
             scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-            anchorPane.setPrefHeight(1060);
+            anchorPane.setPrefHeight(1250);
         }else{
             popUp.setVisible(true);
             popUp.setDisable(false);
