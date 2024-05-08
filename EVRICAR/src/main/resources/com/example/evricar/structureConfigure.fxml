@@ -336,6 +336,15 @@
             </VBox.margin>
          </CheckBox>
       </VBox>
+         <VBox layoutX="653.0" layoutY="61.0" prefHeight="175.0" prefWidth="378.0">
+            <children>
+               <CheckBox fx:id="extra1" mnemonicParsing="false" prefHeight="26.0" prefWidth="87.0" text="CheckBox" />
+               <CheckBox fx:id="extra2" mnemonicParsing="false" text="CheckBox" />
+               <CheckBox fx:id="extra3" mnemonicParsing="false" text="CheckBox" />
+               <CheckBox fx:id="extra4" mnemonicParsing="false" text="CheckBox" />
+               <CheckBox fx:id="extra5" mnemonicParsing="false" text="CheckBox" />
+            </children>
+         </VBox>
    </Pane>
 
      <Button fx:id="prev" contentDisplay="CENTER" layoutX="1110.0" layoutY="850.0" mnemonicParsing="false" onAction="#askPrev" prefHeight="65.0" prefWidth="198.0" styleClass="btn-prev" text="Preventivo   &gt;">

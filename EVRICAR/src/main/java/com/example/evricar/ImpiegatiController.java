@@ -28,10 +28,18 @@ public class ImpiegatiController implements Initializable {
     public TextField codice_prev;
     public Button show;
     public GridPane root2;
+    public Hyperlink myEvricar;
     private String content;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        myEvricar.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                DButils.changeScene(event,"structureSignIn.fxml","Sign In",null,null);
+            }
+        });
+
         try {
             DButils.setTable();
 
@@ -52,7 +60,7 @@ public class ImpiegatiController implements Initializable {
                     root2.setMaxSize(300,300);
                 }
             }
-
+           setLink();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -80,6 +88,15 @@ public class ImpiegatiController implements Initializable {
             alert.setHeaderText(null);
             alert.setContentText("Inserisci un codice valido");
             alert.show();
+        }
+
+    }
+
+    public void setLink ()
+    {
+        if (testAutoData.nameImpiegati != null && !testAutoData.nameImpiegati.isEmpty())
+        {
+            myEvricar.setText(testAutoData.nameImpiegati);
         }
 
     }

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 import java.io.*;
 import java.net.URL;
@@ -20,7 +21,6 @@ public class PreventivoController implements Initializable {
     public Label col;
     public Label opt;
     public Label mot;
-    public Label used;
     public Label data_rit;
     public Label citta;
     public Label usato_mod;
@@ -32,6 +32,10 @@ public class PreventivoController implements Initializable {
     public Label prezzo;
     public StringBuilder builder = new StringBuilder();
     public Button accetta;
+    public Pane popUp_senzaUsato;
+    public Button catalogo;
+    public Pane popUp_conUsato;
+    public Button catalogo1;
 
     public void goBack(ActionEvent event) {
         DButils.changeScene(event,"structureConfigure.fxml",null,null,null);
@@ -48,7 +52,6 @@ public class PreventivoController implements Initializable {
         mot.setText(testAutoData.engine);
         data_rit.setText(testAutoData.date);
         citta.setText(testAutoData.city);
-        used.setText(String.valueOf(testAutoData.secondHand));
         usato_mod.setText(testAutoData.usatoModello);
         marca_used.setText(testAutoData.marcaUsato);
         anno_used.setText(testAutoData.usatoAnno);
@@ -139,12 +142,12 @@ public class PreventivoController implements Initializable {
         if(testAutoData.secondHand)
         {
             testAutoData.preventivoApprovato  = true;
-            //Pop-up Grazie per aver acquistato da noi ( pulsante torna la catalogo )
-            DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
+            popUp_conUsato.setVisible(true);
+            popUp_conUsato.setDisable(false);
         }else {
             testAutoData.preventivoApprovato  = false;
-            //Pop-up il suo preventivo dovrà essere accettato ( pulsante ok torna al catalogo )
-            DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
+            popUp_senzaUsato.setVisible(true);
+            popUp_senzaUsato.setDisable(false);
         }
 
     }
@@ -156,6 +159,10 @@ public class PreventivoController implements Initializable {
                 builder.append(scanner.nextLine());
             }
         }
+    }
+
+    public void goToCatalog(ActionEvent event) {
+        DButils.changeScene(event,"structureCatalog.fxml",null,null,null);
     }
 }
 

@@ -83,6 +83,12 @@ public class ConfigController implements Initializable {
     public TextField tel;
     public TextField email;
 
+    public CheckBox extra5;
+    public CheckBox extra4;
+    public CheckBox extra3;
+    public CheckBox extra2;
+    public CheckBox extra1;
+
     private int currentMotore;
     public float appo;
     public ObservableList <String> list = FXCollections.observableArrayList();
@@ -210,6 +216,38 @@ public class ConfigController implements Initializable {
 
         prezzo.setText(String.valueOf(testAutoData.prezzo));
         currentPrice = String.valueOf(testAutoData.prezzo);
+
+        if(extra1.getText().equals("CheckBox"))
+        {
+            extra1.setVisible(false);
+        }else
+        {
+            extra1.setVisible(true);
+        }
+        if (extra2.getText().equals("CheckBox"))
+        {
+            extra2.setVisible(false);
+        }else {
+            extra2.setVisible(true);
+        }
+        if (extra3.getText().equals("CheckBox"))
+        {
+            extra3.setVisible(false);
+        }else {
+            extra3.setVisible(true);
+        }
+         if (extra4.getText().equals("CheckBox") )
+        {
+            extra4.setVisible(false);
+        }else{
+             extra4.setVisible(true);
+        }
+        if(extra5.getText().equals("CheckBox")){
+            extra5.setVisible(false);
+        }else {
+            extra5.setVisible(true);
+        }
+
 
         nero.setOnMouseClicked(new EventHandler<MouseEvent>(){
             @Override

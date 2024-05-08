@@ -148,8 +148,10 @@ public class DButils
 					String retriveMail = resultSets.getString("mail");
 					if (retrievePassword.equals(password)) {
 						if (retriveMail.contains("@impiegatiEvricar.com")) {
+							testAutoData.nameImpiegati = mail;
 							changeScene(event,"structureImpiegati.fxml","Welcome",mail,retriveMail);
 						}else if(retriveMail.contains("@segreteriaEvricar.com")) {
+							testAutoData.nameSegreteria = mail;
 							changeScene(event,"structureSegreteria.fxml","Welcome",mail,retriveMail);
 						}else {
 							changeScene(event,"structureCatalog.fxml","Welcome!",mail,retriveMail);
@@ -433,6 +435,33 @@ public class DButils
 		testAutoData.prevV = list;
 	}
 
+	public static void getAutoInfo() throws SQLException
+	{
+		Connection connection;
+		PreparedStatement preparedStatement;
+		ResultSet resultSets;
+		ObservableList<String> listAuto= FXCollections.observableArrayList();
+		try {
+			connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer", "freedb_notAndre", "pGs!eJaDMPp3*56");
+			preparedStatement = connection.prepareStatement("SELECT car_id , marca , modello FROM Automobili");
+			resultSets = preparedStatement.executeQuery();
+
+			while (resultSets.next()) {
+				String id1 = resultSets.getString("car_id");
+				String marca1 = resultSets.getString("marca");
+				String modello1 = resultSets.getString("modello");
+
+				listAuto.add(id1);
+				listAuto.add(marca1);
+				listAuto.add(modello1);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		testAutoData.auto = listAuto;
+	}
+
 	public static  void getPrevCont (String codPreventivo) throws SQLException
 	{
 		Connection connection;
@@ -558,13 +587,30 @@ public class DButils
 			preparedStatement =connection.prepareStatement("SELECT esito FROM EsitoPreventivo WHERE user_id=?");
 			preparedStatement.setString(1, String.valueOf(idUserFromCatalog));
 			resultSets = preparedStatement.executeQuery();
-
-				while(resultSets.next()){
+			if (!resultSets.isBeforeFirst())
+			{
+				testAutoData.esito = "Null";
+			}else {
+				while (resultSets.next()) {
 					String retrieveEsito = resultSets.getString("esito");
-                    testAutoData.esito = retrieveEsito;
+					testAutoData.esito = retrieveEsito;
+				}
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public static void insertOptional(String text, String text1, float i) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSets = null;
+
+		connection = DriverManager.getConnection("jdbc:mysql://sql.freedb.tech:3306/freedb_Car Dealer","freedb_notAndre","pGs!eJaDMPp3*56");
+		PreparedStatement pstInsert = connection.prepareStatement("INSERT INTO OptionalExtra (car_id,optional,prezzo) VALUES (?,?,?)");
+		pstInsert.setString(1, String.valueOf(text));
+		pstInsert.setString(2, String.valueOf(text1));
+		pstInsert.setString(3, String.valueOf(i));
+		pstInsert.executeUpdate();
 	}
 }

@@ -115,6 +115,7 @@ public class CatalogController implements Initializable {
             testAutoData.id_name = name;
             System.out.println(testAutoData.id_name);
             DButils.getIdFromCatalog(testAutoData.id_name);
+
             DButils.getResult(testAutoData.idUserFromCatalog);
 
             if (Objects.equals(testAutoData.esito, "true"))

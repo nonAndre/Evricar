@@ -12,6 +12,7 @@ public class testAutoData {
     public static String codPreventivo;
     public static ObservableList<String> prevV;
     public static ObservableList<String> prev;
+    public static ObservableList<String> auto;
     public static boolean preventivoApprovato;
 
     public static float prezzoFin;
@@ -45,4 +46,7 @@ public class testAutoData {
     public static float prezzo;
     public static String esito;
     public static String accettato = "null";
+
+    public static String nameImpiegati;
+    public static String nameSegreteria;
 }
