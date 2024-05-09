@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="592.0" prefWidth="1176.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.evricar.OptionalController">
+    <children>
+        <Button fx:id="button" layoutX="30.0" layoutY="35.0" mnemonicParsing="false" onAction="#previus" prefHeight="28.0" prefWidth="61.0" text="Indietro" />
+        <Label layoutX="37.0" layoutY="109.0" prefHeight="17.0" prefWidth="61.0" text="Auto" />
+        <Label layoutX="293.0" layoutY="109.0" prefHeight="17.0" prefWidth="61.0" text="Optional" />
+        <TextField fx:id="autoText" layoutX="104.0" layoutY="105.0" />
+        <TextField fx:id="optionalText" layoutX="367.0" layoutY="105.0" />
+        <Button fx:id="send" layoutX="545.0" layoutY="105.0" mnemonicParsing="false" onAction="#inserisci" text="Inserisci" />
+        <GridPane fx:id="gridPane" layoutX="783.0" layoutY="35.0" prefHeight="97.0" prefWidth="300.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <Label layoutX="36.0" layoutY="194.0" prefHeight="18.0" prefWidth="136.0" text="Modifica elemento auto" />
+        <TextArea fx:id="newDesc" layoutX="367.0" layoutY="185.0" prefHeight="25.0" prefWidth="200.0" />
+        <Button fx:id="aggiornaDesc" layoutX="588.0" layoutY="192.0" mnemonicParsing="false" onAction="#updateDesc" text="Button" />
+      <ChoiceBox fx:id="choicebox" layoutX="194.0" layoutY="191.0" prefWidth="150.0" />
+      <Button fx:id="TableOp" layoutX="596.0" layoutY="284.0" mnemonicParsing="false" onAction="#eliminaOpt" text="Button" />
+      <Label layoutX="316.0" layoutY="288.0" prefHeight="18.0" prefWidth="95.0" text="Optional da elim" />
+      <TextField fx:id="eliminaOp" layoutX="425.0" layoutY="285.0" />
+      <GridPane fx:id="listaOp" layoutX="396.0" layoutY="339.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+    </children>
+</AnchorPane>
